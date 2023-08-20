@@ -23,7 +23,7 @@ public class MyAccountPageTests {
     }
 
     @Test
-    public void testMethod() {
+    public void validateSuccessfulLogin() {
         LandingPage landingPage = new LandingPage(driver);
         landingPage.clickAccountLink();
         AccountOptionsPage accountOptionsPage = new AccountOptionsPage(driver);
