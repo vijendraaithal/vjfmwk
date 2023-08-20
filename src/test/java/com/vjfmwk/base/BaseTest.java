@@ -24,6 +24,8 @@ public class BaseTest {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         baseURL = "http://demo-store.seleniumacademy.com/";
+        // baseURL = "http://magento-demo.lexiconn.com/";
+        // baseURL = "http://demo.magento.recolize.com/";
         driver.get(baseURL);
         landingPage = new LandingPage(driver);
         landingPage.clickAccountLink();

@@ -4,6 +4,7 @@
         <classes>
             <class name="com.vjfmwk.tests.MyAccountPageTests"></class>
             <class name="com.vjfmwk.tests.MyWishListPageTests"></class>
+            <class name="com.vjfmwk.tests.LoginPageTests"></class>
         </classes>
         
     </test>

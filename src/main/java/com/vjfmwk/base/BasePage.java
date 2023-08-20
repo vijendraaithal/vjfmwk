@@ -9,6 +9,10 @@ public class BasePage {
         this.driver = driver;
     }
 
+    public BasePage() {
+
+    }
+
     public boolean verifyTitle(String expectedTitle) {
         return driver.getTitle().equalsIgnoreCase(expectedTitle);
     }
