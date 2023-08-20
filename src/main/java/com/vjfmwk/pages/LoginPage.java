@@ -27,9 +27,10 @@ public class LoginPage {
         driver.findElement(By.name(LOGIN_BUTTON)).click();
     }
 
-    public void signInWith(String username, String password) {
+    public MyAccountPage signInWith(String username, String password) {
         enterEmail(username);
         enterPassword(password);
         clickLoginButton();
+        return new MyAccountPage(driver);
     }
 }
