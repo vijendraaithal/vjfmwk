@@ -29,6 +29,12 @@ public class MyWishListPageTests extends BaseTest {
         Assert.assertEquals(pageTitle.toLowerCase(), "My Wishlist".toLowerCase());
     }
 
+    @Test
+    public void validateEmptyWishlistInfoDisplay() {
+        String emptyWishlistInfo = wishlistPage.getEmptyWishListText();
+        Assert.assertEquals(emptyWishlistInfo.toLowerCase(), "you have no items in your wishlist.");
+    }
+
     @AfterClass
     public void tearDown() {
     }

@@ -17,4 +17,9 @@ public class MyWishlistPage {
         return pageTitle;
     }
 
+    public String getEmptyWishListText() {
+        String actualText = driver.findElement(By.className("wishlist-empty")).getText();
+        return actualText;
+    }
+
 }
