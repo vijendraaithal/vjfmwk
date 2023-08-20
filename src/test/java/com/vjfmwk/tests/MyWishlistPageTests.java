@@ -23,16 +23,16 @@ public class MyWishlistPageTests {
 
     @Test
     public void testMethod() {
-        driver.findElement(By.cssSelector("[data-target-element='#header-account']")).click();
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        landingPage.clickAccount();
+        accountOptionsPage.clickLogIn();
+        loginPage.signInWith("vijendra.aithal@gmail.com", "Abcd1234!");
+        myAccountPage.verifyAccountHolerDetails();
+        accountOptionsPage.clickMyWishlist();
+        myWishlistPage.verifyItemsWishlistedCount();
     }
 
     @AfterClass
     public void tearDown() {
-
+        driver.quit();
     }
 }
