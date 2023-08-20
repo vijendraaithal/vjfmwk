@@ -1,13 +1,15 @@
 package com.vjfmwk.pages;
 
+import com.vjfmwk.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class MyAccountPage {
+public class MyAccountPage extends BasePage {
     public WebDriver driver;
 
     public MyAccountPage(WebDriver driver) {
+        super(driver);
         this.driver = driver;
     }
 

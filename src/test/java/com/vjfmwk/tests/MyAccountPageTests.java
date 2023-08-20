@@ -5,6 +5,7 @@ import com.vjfmwk.pages.*;
 import org.hamcrest.MatcherAssert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -17,6 +18,11 @@ public class MyAccountPageTests extends BaseTest {
 
     @BeforeClass
     public void setUp() {
+    }
+
+    @Test
+    public void verifyPageTitle() {
+        Assert.assertTrue(myAccountPage.verifyTitle("My Account"));
     }
 
     @Test

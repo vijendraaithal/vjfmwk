@@ -1,9 +1,10 @@
 package com.vjfmwk.pages;
 
+import com.vjfmwk.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class AccountOptionsPage {
+public class AccountOptionsPage extends BasePage {
 
     public WebDriver driver;
 
@@ -11,6 +12,7 @@ public class AccountOptionsPage {
     private String MY_WISH_LIST_LINK = "[title='My Wishlist']";
     private String ACCOUNT_LINK = "[data-target-element='#header-account']";
     public AccountOptionsPage(WebDriver driver) {
+        super(driver);
         this.driver = driver;
     }
 

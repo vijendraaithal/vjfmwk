@@ -1,15 +1,17 @@
 package com.vjfmwk.pages;
 
+import com.vjfmwk.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage {
+public class LoginPage extends BasePage {
     public WebDriver driver;
     private String EMAIL_INPUT = "email";
     private String PASSWORD_INPUT = "pass";
     private String LOGIN_BUTTON = "send";
 
     public LoginPage(WebDriver driver) {
+        super(driver);
         this.driver = driver;
     }
 
