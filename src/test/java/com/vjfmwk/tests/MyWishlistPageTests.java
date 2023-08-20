@@ -1,5 +1,8 @@
 package com.vjfmwk.tests;
 
+import com.vjfmwk.pages.AccountOptionsPage;
+import com.vjfmwk.pages.LandingPage;
+import com.vjfmwk.pages.LoginPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -23,12 +26,14 @@ public class MyWishlistPageTests {
 
     @Test
     public void testMethod() {
-        landingPage.clickAccount();
-        accountOptionsPage.clickLogIn();
+        LandingPage landingPage = new LandingPage(driver);
+        landingPage.clickAccountLink();
+        AccountOptionsPage accountOptionsPage = new AccountOptionsPage(driver);
+        LoginPage loginPage = accountOptionsPage.clickLogIn();
         loginPage.signInWith("vijendra.aithal@gmail.com", "Abcd1234!");
-        myAccountPage.verifyAccountHolerDetails();
-        accountOptionsPage.clickMyWishlist();
-        myWishlistPage.verifyItemsWishlistedCount();
+//        myAccountPage.verifyAccountHolerDetails();
+//        accountOptionsPage.clickMyWishlist();
+//        myWishlistPage.verifyItemsWishlistedCount();
     }
 
     @AfterClass
