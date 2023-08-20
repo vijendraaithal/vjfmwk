@@ -1,5 +1,6 @@
 package com.vjfmwk.tests;
 
+import com.vjfmwk.base.BaseTest;
 import com.vjfmwk.pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,27 +11,14 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class MyWishListPageTests {
+public class MyWishListPageTests extends BaseTest {
 
     WebDriver driver;
     String baseURL;
-    LandingPage landingPage;
-    LoginPage loginPage;
-    AccountOptionsPage accountOptionsPage;
     MyWishlistPage wishlistPage;
 
     @BeforeClass
     public void setUp() {
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        baseURL = "http://demo-store.seleniumacademy.com/";
-        driver.get(baseURL);
-        landingPage = new LandingPage(driver);
-        landingPage.clickAccountLink();
-        accountOptionsPage = new AccountOptionsPage(driver);
-        accountOptionsPage.clickLogIn();
-        loginPage = new LoginPage(driver);
-        loginPage.signInWith("vijendra.aithal@gmail.com", "Abcd1234!");
         accountOptionsPage.clickAccount();
         wishlistPage = accountOptionsPage.clickMyWishlist();
     }
@@ -43,6 +31,5 @@ public class MyWishListPageTests {
 
     @AfterClass
     public void tearDown() {
-        driver.quit();
     }
 }
