@@ -8,7 +8,7 @@ public class AccountOptionsPage extends BasePage {
 
     public WebDriver driver;
 
-    private String LOGIN_LINK = "[title='Log In']";
+    private String LOGIN_LINK = "css$[title='Log In']";
     private String MY_WISH_LIST_LINK = "[title='My Wishlist']";
     private String ACCOUNT_LINK = "[data-target-element='#header-account']";
     private String LOGOUT_LINK = "[title='Log Out']";
