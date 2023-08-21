@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 public class LandingPage extends BasePage {
 
     public WebDriver driver;
-    private String ACCOUNT_LINK = "[data-target-element='#header-account']";
+    private String ACCOUNT_LINK = "css=>[data-target-element='#header-account']";
 
     public LandingPage(WebDriver driver) {
         super(driver);
@@ -15,7 +15,7 @@ public class LandingPage extends BasePage {
     }
 
     public void clickAccountLink() {
-        driver.findElement(By.cssSelector(ACCOUNT_LINK)).click();
+        elementClick(ACCOUNT_LINK, "Clicking Account Link");
     }
 
 }

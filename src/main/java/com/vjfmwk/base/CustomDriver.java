@@ -30,6 +30,9 @@ public class CustomDriver {
         jse = (JavascriptExecutor) driver;
     }
 
+    public CustomDriver() {
+    }
+
     public void refresh() {
         driver.navigate().refresh();
         System.out.println("The current browser location was refreshed");
@@ -43,8 +46,8 @@ public class CustomDriver {
 
     public By getByType(String locator) {
         By by = null;
-        String locatorType = locator.split("$")[0];
-        String locatorValue = locatorType.split("$")[1];
+        String locatorType = locator.split("=>")[0];
+        String locatorValue = locator.split("=>")[1];
         try {
             if (locatorType.contains("id")) {
                 by = By.id(locatorValue);

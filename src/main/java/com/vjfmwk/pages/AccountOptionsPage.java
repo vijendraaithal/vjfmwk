@@ -8,33 +8,31 @@ public class AccountOptionsPage extends BasePage {
 
     public WebDriver driver;
 
-    private String LOGIN_LINK = "css$[title='Log In']";
-    private String MY_WISH_LIST_LINK = "[title='My Wishlist']";
-    private String ACCOUNT_LINK = "[data-target-element='#header-account']";
-    private String LOGOUT_LINK = "[title='Log Out']";
+    private final String LOGIN_LINK = "css=>[title='Log In']";
+    private final String MY_WISH_LIST_LINK = "css=>[title='My Wishlist']";
+    private final String ACCOUNT_LINK = "css=>[data-target-element='#header-account']";
+    private final String LOGOUT_LINK = "css=>[title='Log Out']";
     public AccountOptionsPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
     }
 
     public LoginPage clickLogIn() {
-        driver.findElement(By.cssSelector(LOGIN_LINK)).click();
+        elementClick(LOGIN_LINK,"Clicking Login Button");
         return new LoginPage(driver);
     }
 
     public LandingPage clickLogOut() {
-        driver.findElement(By.cssSelector(LOGOUT_LINK)).click();
+        elementClick(LOGOUT_LINK, "Clicking Logout Link");
         return new LandingPage(driver);
     }
 
     public MyWishlistPage clickMyWishlist() {
-        driver.findElement(By.cssSelector(MY_WISH_LIST_LINK)).click();
+        elementClick(MY_WISH_LIST_LINK, "Click MyWishlist link");
         return new MyWishlistPage(driver);
     }
 
     public void clickAccount() {
-        driver.findElement(By.cssSelector(ACCOUNT_LINK)).click();
+        elementClick(ACCOUNT_LINK, "Clicking Account Link");
     }
-
-
 }

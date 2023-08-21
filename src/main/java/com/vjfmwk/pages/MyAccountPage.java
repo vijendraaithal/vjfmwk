@@ -13,11 +13,11 @@ public class MyAccountPage extends BasePage {
         this.driver = driver;
     }
 
-    private String MY_DASHBOARD_LABEL = "//h1"; //xpath
-    private String LOGGED_IN_USER_CONTENT = "hello"; // className
+    private String MY_DASHBOARD_LABEL = "xpath=>//h1";
+    private String LOGGED_IN_USER_CONTENT = "class=>hello";
 
-    public String getAccountHolerDetails() {
-        return driver.findElement(By.className(LOGGED_IN_USER_CONTENT)).getText();
+    public String getAccountHolderDetails() {
+        return getElement(LOGGED_IN_USER_CONTENT, "Get account holder name").getText();
     }
 
 }

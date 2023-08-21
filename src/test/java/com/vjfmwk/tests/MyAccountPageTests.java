@@ -27,7 +27,7 @@ public class MyAccountPageTests extends BaseTest {
 
     @Test
     public void validateSuccessfulLogin() {
-        String accountHolder = myAccountPage.getAccountHolerDetails();
+        String accountHolder = myAccountPage.getAccountHolderDetails();
         MatcherAssert.assertThat("", accountHolder.equalsIgnoreCase("Hello, Vijendra Aithal!"));
     }
 

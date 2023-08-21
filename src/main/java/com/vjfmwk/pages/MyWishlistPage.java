@@ -7,7 +7,8 @@ import org.openqa.selenium.WebDriver;
 public class MyWishlistPage extends BasePage {
     public WebDriver driver;
 
-    private String PAGE_HEADER_TAG = "h1";
+    private String PAGE_HEADER_TAG = "tag=>h1";
+    private String EMPTY_WISHLIST_TEXT = "class=>wishlist-empty";
 
     public MyWishlistPage(WebDriver driver) {
         super(driver);
@@ -15,12 +16,12 @@ public class MyWishlistPage extends BasePage {
     }
 
     public String getPageTitle() {
-        String pageTitle = driver.findElement(By.tagName(PAGE_HEADER_TAG)).getText();
+        String pageTitle = getElement(PAGE_HEADER_TAG,"Page Heading").getText();
         return pageTitle;
     }
 
     public String getEmptyWishListText() {
-        String actualText = driver.findElement(By.className("wishlist-empty")).getText();
+        String actualText = getElement(EMPTY_WISHLIST_TEXT, "Emply Wishlist Text").getText();
         return actualText;
     }
 
