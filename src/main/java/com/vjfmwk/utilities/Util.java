@@ -32,6 +32,17 @@ public class Util extends BasePage {
         sleep(msecToWait, null);
     }
 
+    public static String getScreenshotName(String methodName, String browserName) {
+        String localDateTime = getCurrentDateTime();
+        StringBuilder name = new StringBuilder().append(browserName)
+                .append("_")
+                .append(methodName)
+                .append("_")
+                .append(localDateTime)
+                .append(".png");
+        return name.toString();
+    }
+
     /**
      * Get random number between the provided range
      * @param min
