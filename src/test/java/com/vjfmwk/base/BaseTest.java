@@ -21,8 +21,8 @@ public class BaseTest {
     protected MyAccountPage myAccountPage;
     @BeforeClass
     public void commonSetUp() {
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver = WebDriverFactory.getInstance().getDriver("chrome");
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         baseURL = "http://demo-store.seleniumacademy.com/";
         // baseURL = "http://magento-demo.lexiconn.com/";
         // baseURL = "http://demo.magento.recolize.com/";
@@ -36,6 +36,6 @@ public class BaseTest {
 
     @AfterClass
     public void commonTearDown() {
-        driver.quit();
+        WebDriverFactory.getInstance().quitDriver();
     }
 }
